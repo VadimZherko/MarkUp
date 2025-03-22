@@ -1,0 +1,132 @@
+#include "../include/mainwindow.h"
+#include "../ui/ui_mainwindow.h"
+
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    dialogWidget(new Dialog),
+    scene(new Scene),
+    markTable(new MarkTable),
+    ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+
+    int windowWidth = this->width();
+    int windowHeight = this->height();
+
+    markTable->resize(MARKTABLE_SIZE, windowHeight);
+    markTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    markTable->move(windowWidth - MARKTABLE_SIZE, 0);
+    markTable->setParent(this);
+
+    scene->setParent(this);
+
+    QObject::connect(ui->loadMarkButton, SIGNAL(clicked()), this->dialogWidget, SLOT(showLoadMarkFromFileDialog()));
+    QObject::connect(ui->saveMarkButton, SIGNAL(clicked()), this->dialogWidget, SLOT(showSaveMarkInFileDialog()));
+
+    QObject::connect(ui->addMarkButton, SIGNAL(clicked()), this->dialogWidget, SLOT(showAddMarkDialog()));
+    QObject::connect(ui->moveToMarkButton, SIGNAL(clicked()), this->dialogWidget, SLOT(showMoveToMarkDialog()));
+    QObject::connect(ui->rotateMarkButton, SIGNAL(clicked()), this->scene, SLOT(rotateMark()));
+    QObject::connect(ui->removeMarkButton, SIGNAL(clicked()), this->scene, SLOT(removeMark()));
+
+    QObject::connect(ui->duplicateRightMarkButton, &QPushButton::clicked, this->scene,
+                     [this]() { this->scene->duplicate(Qt::Key_Right); });
+    QObject::connect(ui->duplicateLeftMarkButton, &QPushButton::clicked, this->scene,
+                     [this](){this->scene->duplicate(Qt::Key_Left); });
+    QObject::connect(ui->duplicateDownMarkButton, &QPushButton::clicked, this->scene,
+                     [this](){this->scene->duplicate(Qt::Key_Down); });
+    QObject::connect(ui->duplicateUpMarkButton, &QPushButton::clicked, this->scene,
+                     [this](){this->scene->duplicate(Qt::Key_Up); });
+
+    QObject::connect(dialogWidget, &Dialog::dataReady, this->scene, &Scene::addMark);
+    QObject::connect(scene, &Scene::keyPressEvent_, this, &MainWindow::keyPressEvent);
+    QObject::connect(dialogWidget, &Dialog::dataMoveToReady, this->scene, &Scene::moveToMark);
+
+    QObject::connect(scene, &Scene::setRubberBandDrag, this->ui->workArea,
+                     [this]() { this->ui->workArea->setDragMode(QGraphicsView::RubberBandDrag); });
+    QObject::connect(scene, &Scene::setScrollHandDrag, this->ui->workArea,
+                     [this]() { this->ui->workArea->setDragMode(QGraphicsView::ScrollHandDrag); });
+    QObject::connect(dialogWidget, &Dialog::setScrollHandDrag, this->ui->workArea,
+                     [this]() {this->ui->workArea->setDragMode(QGraphicsView::ScrollHandDrag);});
+
+    QObject::connect(scene, &Scene::markAdded, this->markTable, &MarkTable::addRow);
+    QObject::connect(scene, &Scene::markUpdated, this->markTable, &MarkTable::updateRow);
+    QObject::connect(scene, &Scene::markRemoved, this->markTable, &MarkTable::removeRow);
+
+    QObject::connect(dialogWidget, &Dialog::saveFilePath, this->markTable, &MarkTable::saveTable);
+    QObject::connect(dialogWidget, &Dialog::loadFilePath, this->scene, &Scene::loadTable);
+
+    ui->workArea->setScene(scene);
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::resizeEvent(QResizeEvent* event)
+{
+    QMainWindow::resizeEvent(event);
+
+    int windowWidth = this->width();
+    int windowHeight = this->height();
+
+    int tableWidth = markTable->width();
+
+    markTable->move(windowWidth - tableWidth, 0);
+    markTable->resize(MARKTABLE_SIZE, windowHeight);
+    ui->workArea->resize(windowWidth - tableWidth, windowHeight);
+}
+
+void MainWindow::keyPressEvent(QKeyEvent* event)
+{
+    if(event->modifiers() == Qt::ControlModifier && event->key() == Qt::Key_N)
+    {
+        dialogWidget->showAddMarkDialog();
+        ui->workArea->setDragMode(QGraphicsView::ScrollHandDrag);
+    }
+    else if(event->modifiers() == Qt::ControlModifier && event->key() == Qt::Key_X)
+    {
+        dialogWidget->showMoveToMarkDialog();
+        ui->workArea->setDragMode(QGraphicsView::ScrollHandDrag);
+    }
+    else if(event->modifiers() == Qt::ControlModifier && event->key() == Qt::Key_S)
+    {
+        dialogWidget->showSaveMarkInFileDialog();
+        ui->workArea->setDragMode(QGraphicsView::ScrollHandDrag);
+    }
+    else if(event->modifiers() == Qt::ControlModifier && event->key() == Qt::Key_L)
+    {
+        dialogWidget->showLoadMarkFromFileDialog();
+        ui->workArea->setDragMode(QGraphicsView::ScrollHandDrag);
+    }
+    else if(event->modifiers() == Qt::ControlModifier && event->key() == Qt::Key_ParenRight)
+    {
+        scene->rotateMark();
+        ui->workArea->setDragMode(QGraphicsView::ScrollHandDrag);
+    }
+    else if(event->key() == Qt::Key_Delete)
+    {
+        scene->removeMark();
+        ui->workArea->setDragMode(QGraphicsView::ScrollHandDrag);
+    }
+    else if(event->key() == Qt::Key_9)
+    {
+        for(int i = 1; i != 5; i++)
+        {
+            scene->addMark(i,1,i + 10,0);
+        }
+    }
+    else if(event->key() == Qt::Key_8)
+    {
+        for(int i = 1; i != 5; i++)
+        {
+            scene->addMark(i,2,i,0);
+        }
+    }
+    else if(event->key() == Qt::Key_0)
+    {
+        scene->duplicate(event->key());
+    }
+}
+
+
