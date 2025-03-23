@@ -5,10 +5,10 @@ Mark::Mark(double x, double y, int id, int angular)
     this->setPos(x, y);
     this->angular = angular;
 
-    QPixmap QrImage(":/new/prefix1/img/markIcon.png");
-    if(angular == 90) QrImage.load(":/new/prefix1/img/markIcon_90.png");
-    else if(angular == 180) QrImage.load(":/new/prefix1/img/markIcon_180.png");
-    else if (angular == 270) QrImage.load(":/new/prefix1/img/markIcon_270.png");
+    QPixmap QrImage(":/new/prefix1/markIcon.png");
+    if(angular == 90) QrImage.load(":/new/prefix1/markIcon_90.png");
+    else if(angular == 180) QrImage.load(":/new/prefix1/markIcon_180.png");
+    else if (angular == 270) QrImage.load(":/new/prefix1/markIcon_270.png");
 
     this->setPixmap(QrImage);
     this->setFlag(QGraphicsItem::ItemIsSelectable);

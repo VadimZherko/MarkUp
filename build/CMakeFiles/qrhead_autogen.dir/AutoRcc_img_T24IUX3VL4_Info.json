@@ -1,0 +1,28 @@
+{
+	"BUILD_DIR" : "/home/vadim/repository/tesk_cmake/qrhead/build/qrhead_autogen",
+	"CMAKE_BINARY_DIR" : "/home/vadim/repository/tesk_cmake/qrhead/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/vadim/repository/tesk_cmake/qrhead/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/vadim/repository/tesk_cmake/qrhead",
+	"CMAKE_SOURCE_DIR" : "/home/vadim/repository/tesk_cmake/qrhead",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Unix Makefiles",
+	"INCLUDE_DIR" : "/home/vadim/repository/tesk_cmake/qrhead/build/qrhead_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/vadim/repository/tesk_cmake/qrhead/img/markIcon.png",
+		"/home/vadim/repository/tesk_cmake/qrhead/img/markIcon_180.png",
+		"/home/vadim/repository/tesk_cmake/qrhead/img/markIcon_270.png",
+		"/home/vadim/repository/tesk_cmake/qrhead/img/markIcon_90.png"
+	],
+	"LOCK_FILE" : "/home/vadim/repository/tesk_cmake/qrhead/build/CMakeFiles/qrhead_autogen.dir/AutoRcc_img_T24IUX3VL4_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "img" ],
+	"OUTPUT_CHECKSUM" : "T24IUX3VL4",
+	"OUTPUT_NAME" : "qrc_img.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt6/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/vadim/repository/tesk_cmake/qrhead/build/CMakeFiles/qrhead_autogen.dir/AutoRcc_img_T24IUX3VL4_Used.txt",
+	"SOURCE" : "/home/vadim/repository/tesk_cmake/qrhead/img/img.qrc",
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

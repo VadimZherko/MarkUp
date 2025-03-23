@@ -1,0 +1,9 @@
+/home/vadim/repository/tesk_cmake/qrhead/build/CMakeFiles/qrhead.dir
+/home/vadim/repository/tesk_cmake/qrhead/build/CMakeFiles/edit_cache.dir
+/home/vadim/repository/tesk_cmake/qrhead/build/CMakeFiles/rebuild_cache.dir
+/home/vadim/repository/tesk_cmake/qrhead/build/CMakeFiles/list_install_components.dir
+/home/vadim/repository/tesk_cmake/qrhead/build/CMakeFiles/install.dir
+/home/vadim/repository/tesk_cmake/qrhead/build/CMakeFiles/install/local.dir
+/home/vadim/repository/tesk_cmake/qrhead/build/CMakeFiles/install/strip.dir
+/home/vadim/repository/tesk_cmake/qrhead/build/CMakeFiles/qrhead_autogen_timestamp_deps.dir
+/home/vadim/repository/tesk_cmake/qrhead/build/CMakeFiles/qrhead_autogen.dir
