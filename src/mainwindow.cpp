@@ -10,6 +10,18 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    QIcon Icons(":/new/prefix1/rotateMarkIcon.png");
+    ui->rotateMarkButton->setIcon(Icons);
+    ui->moveToMarkButton->setIcon(Icons.fromTheme(":/new/prefix1/moveToMarkIcon.png"));
+    ui->duplicateDownMarkButton->setIcon(Icons.fromTheme(":/new/prefix1/duplicateDownMarkIcon.png"));
+    ui->duplicateUpMarkButton->setIcon(Icons.fromTheme(":/new/prefix1/duplicateUpMarkIcon.png"));
+    ui->duplicateRightMarkButton->setIcon(Icons.fromTheme(":/new/prefix1/duplicateRightMarkIcon.png"));
+    ui->duplicateLeftMarkButton->setIcon(Icons.fromTheme(":/new/prefix1/duplicateLeftMarkIcon.png"));
+    ui->addMarkButton->setIcon(Icons.fromTheme(":/new/prefix1/addMarkIcon.png"));
+    ui->removeMarkButton->setIcon(Icons.fromTheme(":/new/prefix1/deleteMarkIcon.png"));
+    ui->loadMarkButton->setIcon(Icons.fromTheme(":/new/prefix1/loadMarkIcon.png"));
+    ui->saveMarkButton->setIcon(Icons.fromTheme(":/new/prefix1/saveMarkIcon.png"));
+
     int windowWidth = this->width();
     int windowHeight = this->height();
 

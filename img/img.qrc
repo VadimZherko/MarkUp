@@ -4,5 +4,15 @@
         <file>markIcon_90.png</file>
         <file>markIcon_180.png</file>
         <file>markIcon_270.png</file>
+	<file>duplicateUpMarkIcon.png</file>
+	<file>duplicateDownMarkIcon.png</file>
+	<file>duplicateLeftMarkIcon.png</file>
+	<file>duplicateRightMarkIcon.png</file>
+    <file>moveToMarkIcon.png</file>
+    <file>rotateMarkIcon.png</file>
+    <file>addMarkIcon.png</file>
+    <file>deleteMarkIcon.png</file>
+    <file>loadMarkIcon.png</file>
+    <file>saveMarkIcon.png</file>
     </qresource>
 </RCC>

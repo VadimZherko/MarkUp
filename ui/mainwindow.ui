@@ -223,8 +223,8 @@ QPushButton:disabled {
         <string/>
        </property>
        <property name="icon">
-        <iconset theme="go-next">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset>
+         <normaloff>../img/duplicateRightMarkIcon.png</normaloff>../img/duplicateRightMarkIcon.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -345,8 +345,8 @@ QPushButton:disabled {
         <string/>
        </property>
        <property name="icon">
-        <iconset theme="go-previous">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset>
+         <normaloff>../img/duplicateLeftMarkIcon.png</normaloff>../img/duplicateLeftMarkIcon.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -404,8 +404,8 @@ QPushButton:disabled {
         <string/>
        </property>
        <property name="icon">
-        <iconset theme="go-up">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset>
+         <normaloff>../img/duplicateUpMarkIcon.png</normaloff>../img/duplicateUpMarkIcon.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -566,8 +566,8 @@ QPushButton:disabled {
         <string/>
        </property>
        <property name="icon">
-        <iconset theme="go-jump">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset>
+         <normaloff>../img/rotateMarkIcon.png</normaloff>../img/rotateMarkIcon.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -669,8 +669,8 @@ QPushButton:disabled {
         <string/>
        </property>
        <property name="icon">
-        <iconset theme="go-bottom">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset>
+         <normaloff>../img/moveToMarkIcon.png</normaloff>../img/moveToMarkIcon.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -728,8 +728,8 @@ QPushButton:disabled {
         <string/>
        </property>
        <property name="icon">
-        <iconset theme="go-down">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset>
+         <normaloff>../img/duplicateDownMarkIcon.png</normaloff>../img/duplicateDownMarkIcon.png</iconset>
        </property>
        <property name="iconSize">
         <size>
