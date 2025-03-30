@@ -38,7 +38,7 @@ brew install qt cmake
 1. Clone the repository:
    ```sh
    git clone https://github.com/VadimZherko/QrHead.git
-   cd your-project
+   cd QrHead
    ```
 
 2. Create a build directory and configure the project:
