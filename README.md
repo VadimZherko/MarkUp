@@ -1,71 +1,79 @@
-Building the Project
+# Building the Project
 
 This project is built using CMake and Qt6. Follow the instructions below to set up the environment and compile the project on different platforms.
 
-Prerequisites
+## Prerequisites
 
 Before building the project, ensure you have the following installed:
 
-CMake (version 3.16 or higher)
+- CMake (version 3.16 or higher)
+- Qt6 (including Qt6 Widgets, Core, and Gui modules)
+- A C++ compiler (GCC, Clang, or MSVC)
 
-Qt6 (including Qt6 Widgets, Core, and Gui modules)
+## Installing Dependencies
 
-A C++ compiler (GCC, Clang, or MSVC)
-
-Installing Dependencies
-
-Linux (Ubuntu/Debian-based)
-
+### **Linux (Ubuntu/Debian-based)**
+```sh
+sudo apt update
 sudo apt install qt6-base-dev cmake g++
+```
 
-Arch Linux
-
+### **Arch Linux**
+```sh
 sudo pacman -S qt6-base cmake gcc
+```
 
-MacOS
-
+### **MacOS**
+```sh
 brew install qt cmake
+```
 
-Windows
+### **Windows**
+1. Download and install Qt from [qt.io](https://www.qt.io/download-open-source).
+2. Install CMake from [cmake.org](https://cmake.org/download/).
+3. Ensure that the Qt installation directory is added to the `PATH` variable.
 
-Download and install Qt from qt.io.
+## Building the Project
 
-Install CMake from cmake.org.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/your-project.git
+   cd your-project
+   ```
 
-Ensure that the Qt installation directory is added to the PATH variable.
+2. Create a build directory and configure the project:
+   ```sh
+   cmake -B build
+   ```
 
-Building the Project
+3. Compile the project:
+   ```sh
+   cmake --build build
+   ```
 
-Clone the repository:
-
-git clone https://github.com/VadimZherko/QrHead cd QrHead
-
-Create a build directory and configure the project:
-
-cmake -B build
-
-Compile the project:
-
-cmake --build build
-
-Running the Application
+## Running the Application
 
 Once the build process is complete, you can run the application:
 
-./build/MyApp # Linux & MacOS build\MyApp.exe # Windows
+```sh
+./build/MyApp  # Linux & MacOS
+build\MyApp.exe  # Windows
+```
 
-Alternative: Using vcpkg
-
+## Alternative: Using vcpkg
 If you prefer using vcpkg to manage dependencies, install Qt via vcpkg:
+```sh
+./vcpkg install qt6-base
+cmake -DCMAKE_TOOLCHAIN_FILE=/path/to/vcpkg.cmake -B build
+cmake --build build
+```
 
-./vcpkg install qt6-base cmake -DCMAKE_TOOLCHAIN_FILE=/path/to/vcpkg.cmake -B build cmake --build build
-
-Notes
-
-If CMake fails to find Qt, specify the Qt installation path manually:
-
-cmake -DCMAKE_PREFIX_PATH=/path/to/qt6 ..
-
-Ensure that all required Qt modules are installed.
+## Notes
+- If CMake fails to find Qt, specify the Qt installation path manually:
+  ```sh
+  cmake -DCMAKE_PREFIX_PATH=/path/to/qt6 ..
+  ```
+- Ensure that all required Qt modules are installed.
 
 Let me know if you run into any issues!
+
