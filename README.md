@@ -37,7 +37,7 @@ brew install qt cmake
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/your-project.git
+   git clone https://github.com/VadimZherko/QrHead.git
    cd your-project
    ```
 
@@ -56,16 +56,8 @@ brew install qt cmake
 Once the build process is complete, you can run the application:
 
 ```sh
-./build/MyApp  # Linux & MacOS
-build\MyApp.exe  # Windows
-```
-
-## Alternative: Using vcpkg
-If you prefer using vcpkg to manage dependencies, install Qt via vcpkg:
-```sh
-./vcpkg install qt6-base
-cmake -DCMAKE_TOOLCHAIN_FILE=/path/to/vcpkg.cmake -B build
-cmake --build build
+./build/QrHEad  # Linux & MacOS
+build\QrHead.exe  # Windows
 ```
 
 ## Notes
