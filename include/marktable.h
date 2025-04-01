@@ -25,9 +25,8 @@ private:
 public slots:
     void addRow(int, double, double, int);
     void updateRow(int, int);
+    void updateCoordsRow(int, double, double);
     void removeRow(int);
-
-    void saveTable(QString);
 };
 
 #endif // MARKTABLE_H

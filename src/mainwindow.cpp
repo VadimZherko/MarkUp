@@ -62,6 +62,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QObject::connect(scene, &Scene::markAdded, this->markTable, &MarkTable::addRow);
     QObject::connect(scene, &Scene::markUpdated, this->markTable, &MarkTable::updateRow);
+    QObject::connect(scene, &Scene::markCoordsUpdated, this->markTable, &MarkTable::updateCoordsRow);
     QObject::connect(scene, &Scene::markRemoved, this->markTable, &MarkTable::removeRow);
 
     QObject::connect(dialogWidget, &Dialog::saveFilePath, this->scene, &Scene::saveInFile);

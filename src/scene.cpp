@@ -379,12 +379,18 @@ void Scene::moveToMark(double x, double y)
     for(auto item : selectedItems)
     {
         item->moveBy(x,y);
+
+        auto [x,y] = toCoords(item->scenePos().x(), item->scenePos().y());
+        emit markCoordsUpdated(qgraphicsitem_cast<Mark*>(item)->getId(), x, y);
+
         movedItems.push_back(item);
         if(!checkInputMark(item->scenePos().x(), item->scenePos().y()))
         {
             for(auto item_ : movedItems)
             {
                 item_->moveBy(-x,-y);
+                auto [x,y] = toCoords(item->scenePos().x(), item->scenePos().y());
+                emit markCoordsUpdated(qgraphicsitem_cast<Mark*>(item)->getId(), x, y);
                 for(auto item : selectedItems) item->show();
             }
             return;

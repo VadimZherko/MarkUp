@@ -58,6 +58,14 @@ void MarkTable::updateRow(int id, int angular)
     model->setItem(row, 3, new QStandardItem(QString::number(angular)));
 }
 
+void MarkTable::updateCoordsRow(int id,double x, double y)
+{
+    auto elem = model->findItems(QString::number(id));
+    auto row = elem.first()->row();
+    model->setItem(row, 1, new QStandardItem(QString::number(x)));
+    model->setItem(row, 2, new QStandardItem(QString::number(y)));
+}
+
 void MarkTable::removeRow(int id)
 {
     auto elem = model->findItems(QString::number(id));
@@ -65,29 +73,4 @@ void MarkTable::removeRow(int id)
     model->removeRows(row, 1);
 }
 
-void MarkTable::saveTable(QString filePath)
-{
-    QFile file(filePath);
-
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-    {
-        QMessageBox::warning(this,"Error", "Error opening file");
-        return;
-    }
-    QTextStream out(&file);
-
-    out << "id" << " x" << " y" << " theta" << "\n";
-    for(int row = 0; row < model->rowCount(); row++)
-    {
-        for (int col = 0; col < model->columnCount(); ++col)
-        {
-            QModelIndex index = model->index(row, col);
-            out << index.data().toString();
-            if(!((row == model->rowCount() - 1 && col == model->columnCount() - 1) || col == model->columnCount() - 1)) out << ",";
-        }
-        out << "\n";
-    }
-
-    file.close();
-}
 

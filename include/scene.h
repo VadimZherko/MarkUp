@@ -78,6 +78,7 @@ public slots:
 signals:
     void markAdded(int, qreal, qreal, int);
     void markUpdated(int, int);
+    void markCoordsUpdated(int, double, double);
     void markRemoved(int);
     void setRubberBandDrag();
     void setScrollHandDrag();
