@@ -59,7 +59,8 @@ void Scene::drawBackground(QPainter* painter, const QRectF& rect)
     font.setPixelSize(FONT_SIZE);
     painter->setFont(font);
 
-    for(int x = left, i = -10; x < right; x+= GRID_SIZE, i++) //Lines on axis X
+    int i =  left / GRID_SIZE;
+    for(int x = left; x < right; x+= GRID_SIZE, i++) //Lines on axis X
     {
         if(i == 0) continue;
 
@@ -70,7 +71,8 @@ void Scene::drawBackground(QPainter* painter, const QRectF& rect)
         painter->drawText(QPointF(x, FONT_POSE_Y), QString::number(i));
     }
 
-    for(int y = bottom, i = -10; y > top; y -= GRID_SIZE, i++) //Lines on axis Y
+    i = -(bottom / GRID_SIZE);
+    for(int y = bottom; y > top; y -= GRID_SIZE, i++) //Lines on axis Y
     {
         if(i == 0) continue;
 

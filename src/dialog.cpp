@@ -136,7 +136,7 @@ void Dialog::createDuplicateMarkDialog()
 
     QLabel* idLabelDup = new QLabel("Shift ID", &duplicateMarkDialog);
     QLineEdit* idLineEditDup = new QLineEdit(&duplicateMarkDialog);
-    idLineEditDup->setText("0");
+    idLineEditDup->setText("1");
     idLineEditDup->setObjectName("idLineEdit");
     idLabelDup->setBuddy(yLineEditDup);
 
@@ -161,12 +161,12 @@ void Dialog::createMoveToMarkDialog()
 
     moveToMarkDialog.setWindowTitle("Move");
 
-    QLabel* xLabelMove = new QLabel("X", &moveToMarkDialog);
+    QLabel* xLabelMove = new QLabel("Shift X", &moveToMarkDialog);
     QLineEdit* xLineEditMove = new QLineEdit(&moveToMarkDialog);
     xLineEditMove->setObjectName("xLineEdit");
     xLabelMove->setBuddy(xLineEditMove);
 
-    QLabel* yLabelMove = new QLabel("Y", &moveToMarkDialog);
+    QLabel* yLabelMove = new QLabel("Shift Y", &moveToMarkDialog);
     QLineEdit* yLineEditMove = new QLineEdit(&moveToMarkDialog);
     yLineEditMove->setObjectName("yLineEdit");
     yLabelMove->setBuddy(yLineEditMove);
@@ -229,13 +229,13 @@ QPair<qreal, int> Dialog::showDuplicateMarkDialog()
             double y = yLineEdit->text().toDouble();
             int id = idLineEdit->text().toInt();
             yLineEdit->setText("0");
-            idLineEdit->setText("0");
+            idLineEdit->setText("1");
             return QPair<qreal,int>(y, id);
         }
         else
         {
             yLineEdit->setText("0");
-            idLineEdit->setText("0");
+            idLineEdit->setText("1");
             return QPair<qreal, int>(3.141592654,0);
         }
     }
