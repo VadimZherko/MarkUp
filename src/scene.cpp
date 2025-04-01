@@ -589,7 +589,6 @@ void Scene::loadTable(QString filePath)
         if(Mark* markItem = qgraphicsitem_cast<Mark*>(item))
         {
             removeMark(markItem);
-            delete markItem;
         }
     }
 
