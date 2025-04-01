@@ -73,6 +73,7 @@ public slots:
     void loadTable(QString);
 
     void duplicate(int);
+    void saveInFile(QString filePath);
 
 signals:
     void markAdded(int, qreal, qreal, int);

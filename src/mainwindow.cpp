@@ -64,7 +64,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(scene, &Scene::markUpdated, this->markTable, &MarkTable::updateRow);
     QObject::connect(scene, &Scene::markRemoved, this->markTable, &MarkTable::removeRow);
 
-    QObject::connect(dialogWidget, &Dialog::saveFilePath, this->markTable, &MarkTable::saveTable);
+    QObject::connect(dialogWidget, &Dialog::saveFilePath, this->scene, &Scene::saveInFile);
     QObject::connect(dialogWidget, &Dialog::loadFilePath, this->scene, &Scene::loadTable);
 
     ui->workArea->setScene(scene);

@@ -610,6 +610,42 @@ void Scene::loadTable(QString filePath)
     }
 }
 
+void Scene::saveInFile(QString filePath)
+{
+    QFile file(filePath);
+
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        showError("Error opening file");
+        return;
+    }
+
+    QTextStream out(&file);
+    out << "id," << " x," << " y," << " theta" << "\n";
+
+    auto items = this->items();
+
+    QVector<Mark*> marks;
+    for(auto item : items)
+    {
+        if(Mark* markItem = qgraphicsitem_cast<Mark*>(item))
+        {
+            marks.push_back(markItem);
+        }
+    }
+
+    std::sort(marks.begin(), marks.end(), [](Mark* a, Mark* b) ->
+              bool{ return a->getId() < b->getId(); });
+
+    for(auto markItem : marks)
+    {
+        auto [x,y] = toCoords(markItem->scenePos().x(), markItem->scenePos().y());
+        out << markItem->getId() << ',' <<  x << ',' << y << ',' << markItem->getAngular() << '\n';
+    }
+
+    file.close();
+}
+
 void Scene::showError(QString errorText)
 {
     QMessageBox::warning(parentWidget, "Error", errorText);
