@@ -35,11 +35,12 @@ int Mark::getId()
 void Mark::setAngular(int angular)
 {
     this->angular = angular;
-    QPixmap new_pixmap;
-    if(angular == 0) new_pixmap.load(":/new/prefix1/img/markIcon.png");
-    else if(angular == 90) new_pixmap.load(":/new/prefix1/img/markIcon_90.png");
-    else if(angular == 180) new_pixmap.load(":/new/prefix1/img/markIcon_180.png");
-    else if (angular == 270) new_pixmap.load(":/new/prefix1/img/markIcon_270.png");
+    QPixmap newPixmap;
 
-    this->setPixmap(new_pixmap);
+    if(angular == 0) newPixmap.load(":/new/prefix1/markIcon.png");
+    else if(angular == 90) newPixmap.load(":/new/prefix1/markIcon_90.png");
+    else if(angular == 180) newPixmap.load(":/new/prefix1/markIcon_180.png");
+    else if (angular == 270) newPixmap.load(":/new/prefix1/markIcon_270.png");
+
+    this->setPixmap(newPixmap);
 }
