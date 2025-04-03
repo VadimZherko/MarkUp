@@ -13,10 +13,11 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
-
-
-
-
+include/config.h include/dialog.h include/mainwindow.h include/mark.h include/marktable.h include/scene.h
+src/dialog.cpp src/main.cpp src/mainwindow.cpp src/mark.cpp src/marktable.cpp src/scene.cpp
+ui/mainwindow.ui
+include/config.h include/dialog.h include/mainwindow.h include/mark.h include/marktable.h include/scene.h
+img/img.qrc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
