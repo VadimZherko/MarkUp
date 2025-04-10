@@ -220,7 +220,7 @@ void Scene::duplicate(int key)
             {
                 auto newX = items[i][0]->scenePos().x() + shift.first;
                 auto newY = items[i][0]->scenePos().y();
-                auto newId = items[i][0]->getId() + shift.second;
+                auto newId = items[i][0]->getId() - shift.second;
                 if(!checkId(newId) || !checkInputMark(newX,newY))
                 {
                     for(auto mark : addedMarks) this->removeMark(mark);
@@ -259,7 +259,7 @@ void Scene::duplicate(int key)
             {
                 auto newX = items[i][0]->scenePos().x();
                 auto newY = items[i][0]->scenePos().y() - shift.first;
-                auto newId = items[i][0]->getId() + shift.second;
+                auto newId = items[i][0]->getId() - shift.second;
                 if(!checkId(newId) || !checkInputMark(newX,newY))
                 {
                     for(auto mark : addedMarks) this->removeMark(mark);

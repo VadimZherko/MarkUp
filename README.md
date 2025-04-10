@@ -77,3 +77,33 @@ cmake --build build
 
 Let me know if you run into any issues!
 
+# Manual
+
+This section describes the keyboard shortcuts available in the application and their respective functions.
+
+### General Actions
+
+| Shortcut     | Action           | Description |
+|--------------|------------------|-------------|
+| `Ctrl + L`   | **Load File**    | Load marks from a `.txt` file into the workspace. |
+| `Ctrl + S`   | **Save File**    | Save all marks currently in the workspace to a `.txt` file. |
+| `Ctrl + N`   | **Add Mark**     | Add a new mark to the workspace. |
+| `Ctrl + >`   | **Rotate Mark**  | Rotate the selected mark by 90 degrees clockwise. |
+| `Ctrl + X`   | **Move Mark(s)** | Move a selected mark or group of marks by a predefined offset. |
+
+### ↔️ Copying Marks
+
+These shortcuts allow duplication of selected marks in the specified direction:
+
+| Shortcut         | Action               | Description |
+|------------------|----------------------|-------------|
+| `↑ Up Arrow`     | **Copy Mark(s) Up**     | Copies the selected mark(s) upward. If one mark or one row is selected, a fixed Y and ID offset is applied. If multiple rows are selected, the offset is calculated dynamically. |
+| `← Left Arrow`   | **Copy Mark(s) Left**   | Same as Up Arrow, but copies left. |
+| `→ Right Arrow`  | **Copy Mark(s) Right**  | Same as Up Arrow, but copies right. |
+| `↓ Down Arrow`   | **Copy Mark(s) Down**   | Same as Up Arrow, but copies down. |
+
+### ❌ Deleting Marks
+
+| Shortcut   | Action             | Description |
+|------------|--------------------|-------------|
+| `Delete`   | **Delete Mark(s)** | Removes the selected mark(s) from the workspace. |
