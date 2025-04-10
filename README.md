@@ -81,7 +81,7 @@ Let me know if you run into any issues!
 
 This section describes the keyboard shortcuts available in the application and their respective functions.
 
-### General Actions
+## General Actions
 
 | Shortcut     | Action           | Description |
 |--------------|------------------|-------------|
@@ -91,7 +91,7 @@ This section describes the keyboard shortcuts available in the application and t
 | `Ctrl + >`   | **Rotate Mark**  | Rotate the selected mark by 90 degrees clockwise. |
 | `Ctrl + X`   | **Move Mark(s)** | Move a selected mark or group of marks by a predefined offset. |
 
-### ↔️ Copying Marks
+## Copying Marks
 
 These shortcuts allow duplication of selected marks in the specified direction:
 
@@ -102,7 +102,7 @@ These shortcuts allow duplication of selected marks in the specified direction:
 | `→ Right Arrow`  | **Copy Mark(s) Right**  | Same as Up Arrow, but copies right. |
 | `↓ Down Arrow`   | **Copy Mark(s) Down**   | Same as Up Arrow, but copies down. |
 
-### ❌ Deleting Marks
+## Deleting Marks
 
 | Shortcut   | Action             | Description |
 |------------|--------------------|-------------|
