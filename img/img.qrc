@@ -1,9 +1,9 @@
 <RCC>
     <qresource prefix="/new/prefix1">
-        <file>markIcon.png</file>
-        <file>markIcon_90.png</file>
-        <file>markIcon_180.png</file>
-        <file>markIcon_270.png</file>
+    <file>markIcon.png</file>
+    <file>markIcon_90.png</file>
+    <file>markIcon_180.png</file>
+    <file>markIcon_270.png</file>
 	<file>duplicateUpMarkIcon.png</file>
 	<file>duplicateDownMarkIcon.png</file>
 	<file>duplicateLeftMarkIcon.png</file>
@@ -14,5 +14,6 @@
     <file>deleteMarkIcon.png</file>
     <file>loadMarkIcon.png</file>
     <file>saveMarkIcon.png</file>
+    <file>axis.png</file>
     </qresource>
 </RCC>

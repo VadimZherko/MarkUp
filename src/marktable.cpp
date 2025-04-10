@@ -73,4 +73,8 @@ void MarkTable::removeRow(int id)
     model->removeRows(row, 1);
 }
 
-
+QPair<double, double> MarkTable::getCoords(int row)
+{
+    QPair<double, double> pair{model->item(row, 1)->text().toDouble(), model->item(row, 2)->text().toDouble()};
+    return pair;
+}

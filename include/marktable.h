@@ -17,6 +17,7 @@ class MarkTable : public QTableView
     Q_OBJECT
 public:
     MarkTable();
+    QPair<double, double> getCoords(int row);
 
 private:
     QStandardItemModel* model;

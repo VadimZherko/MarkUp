@@ -34,5 +34,8 @@ private:
     void setUpTableView();
     void resizeEvent(QResizeEvent*) override;
     void keyPressEvent(QKeyEvent*) override;
+
+private slots:
+    void toMark(const QModelIndex&);
 };
 #endif // MAINWINDOW_H

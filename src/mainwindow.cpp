@@ -10,6 +10,11 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    QPixmap pix(":/new/prefix1/axis.png");
+    ui->image->setPixmap(pix);
+    ui->image->setStyleSheet("background-color: rgba(255, 255, 255, 0);");
+    ui->image->resize(pix.size());
+
     QIcon Icons(":/new/prefix1/rotateMarkIcon.png");
     ui->rotateMarkButton->setIcon(Icons);
     ui->moveToMarkButton->setIcon(Icons.fromTheme(":/new/prefix1/moveToMarkIcon.png"));
@@ -68,7 +73,10 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(dialogWidget, &Dialog::saveFilePath, this->scene, &Scene::saveInFile);
     QObject::connect(dialogWidget, &Dialog::loadFilePath, this->scene, &Scene::loadTable);
 
+    QObject::connect(markTable, &MarkTable::doubleClicked, this, &MainWindow::toMark);
+
     ui->workArea->setScene(scene);
+    ui->workArea->centerOn(-GRID_SIZE * SCENE_X_COEF, GRID_SIZE * SCENE_HEIGHT_COEF);
 }
 
 MainWindow::~MainWindow()
@@ -88,6 +96,7 @@ void MainWindow::resizeEvent(QResizeEvent* event)
     markTable->move(windowWidth - tableWidth, 0);
     markTable->resize(MARKTABLE_SIZE, windowHeight);
     ui->workArea->resize(windowWidth - tableWidth, windowHeight);
+    ui->image->move(20, windowHeight - 100);
 }
 
 void MainWindow::keyPressEvent(QKeyEvent* event)
@@ -140,6 +149,12 @@ void MainWindow::keyPressEvent(QKeyEvent* event)
     {
         scene->duplicate(event->key());
     }
+}
+
+void MainWindow::toMark(const QModelIndex& index)
+{
+    auto coords = markTable->getCoords(index.row());
+    ui->workArea->centerOn(coords.first, coords.second);
 }
 
 
