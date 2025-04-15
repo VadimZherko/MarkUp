@@ -37,7 +37,7 @@ brew install qt cmake
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/VadimZherko/QrHead.git
+   git clone https://github.com/VadimZherko/MarkUp.git
    cd your-project
    ```
 
@@ -56,8 +56,8 @@ brew install qt cmake
 Once the build process is complete, you can run the application:
 
 ```sh
-./build/QrHead  # Linux & MacOS
-build\QrHead.exe  # Windows
+./build/MarkUp  # Linux & MacOS
+build\MarkUp.exe  # Windows
 ```
 
 ## Alternative: Using vcpkg

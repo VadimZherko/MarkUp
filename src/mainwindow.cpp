@@ -76,7 +76,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(markTable, &MarkTable::doubleClicked, this, &MainWindow::toMark);
 
     ui->workArea->setScene(scene);
-    ui->workArea->centerOn(-GRID_SIZE * SCENE_X_COEF, GRID_SIZE * SCENE_HEIGHT_COEF);
+    ui->workArea->centerOn(-GRID_SIZE * SCENE_X_COEF + 600, GRID_SIZE * SCENE_HEIGHT_COEF - 2250);
 }
 
 MainWindow::~MainWindow()

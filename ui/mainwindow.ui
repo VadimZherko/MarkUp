@@ -14,11 +14,11 @@
    <enum>Qt::NoContextMenu</enum>
   </property>
   <property name="windowTitle">
-   <string>QrHead</string>
+   <string>MarkUp</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>:/new/prefix1/img/markIcon_270.png</normaloff>:/new/prefix1/img/markIcon_270.png</iconset>
+   <iconset resource="../img/img.qrc">
+    <normaloff>:/new/prefix1/logoMarkUp.png</normaloff>:/new/prefix1/logoMarkUp.png</iconset>
   </property>
   <property name="toolTipDuration">
    <number>1</number>
@@ -789,6 +789,8 @@ QPushButton:disabled {
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../img/img.qrc"/>
+ </resources>
  <connections/>
 </ui>
